@@ -1,9 +1,9 @@
 import React from "react";
 import "../../components/Button/BrandButton.css";
 
-const Button = () => {
+const Button = (props) => {
   return (
-    <a href="#" className="Brand-button">View Deals</a>
+    <a href={props.link} className="Brand-button">View Deals</a>
   );
 };
 

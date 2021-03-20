@@ -18,7 +18,7 @@ const Home = () => {
           <p className="mt-14 mb-14 font-thin Hero-insert">
           An online auction where bars can tender their listings and deals and drinks brands can bid for them.
           </p>  
-          <Button />
+          <Button link="/listings" />
         </div>
         <img src={beer} className="Beer-svg"></img>
       </div>
