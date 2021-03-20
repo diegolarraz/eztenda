@@ -1,13 +1,5 @@
-@keyframes spinner {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(359deg);
-  }
-}
-
 .Login {
+  margin: 4rem auto 0;
   border-radius: 2px 2px 5px 5px;
   padding: 10px 20px 20px 20px;
   width: 90%;
@@ -23,25 +15,7 @@
   padding-top: 50px;
 }
 
-.Login.loading.Spinner {
-  opacity: 1;
-  top: 40%;
-}
-
-.Login.ok button {
-  background-color: #8bc34a;
-}
-
-.Login.ok .Spinner {
-  border-radius: 0;
-  border-top-color: transparent;
-  border-right-color: transparent;
-  height: 20px;
-  animation: none;
-  transform: rotateZ(-45deg);
-}
-
-input {
+.Login input {
   display: block;
   padding: 15px 10px;
   margin-bottom: 10px;
@@ -50,26 +24,17 @@ input {
   transition: border-width 0.2s ease;
   border-radius: 2px;
   color: #ccc;
+  font-size: 1.8rem;
 }
 
-input i.fa {
-  color: #fff;
-  font-size: 1em;
-  position: absolute;
-  margin-top: -47px;
-  opacity: 0;
-  left: 0;
-  transition: all 0.1s ease-in;
-}
-
-input:focus {
+.Login input:focus {
   outline: none;
   color: #444;
-  border-color: $primary;
+  border-color: var(--color-primary);
   border-left-width: 35px;
 }
 
-input:focus + i.fa {
+.Login input:focus + i.fa {
   opacity: 1;
   left: 30px;
   transition: all 0.25s ease-out;
@@ -77,14 +42,14 @@ input:focus + i.fa {
 
 .Title {
   color: #444;
-  font-size: 1.2em;
+  font-size: 2rem;
   font-weight: bold;
   margin: 10px 0 30px 0;
   border-bottom: 1px solid #eee;
   padding-bottom: 20px;
 }
 
-button {
+.Login button {
   width: 100%;
   height: 100%;
   padding: 10px 10px;
@@ -100,33 +65,11 @@ button {
   border: 0px solid rgba(0, 0, 0, 0.1);
   border-radius: 0 0 2px 2px;
   transform: rotateZ(0deg);
-
   transition: all 0.1s ease-out;
   border-bottom-width: 7px;
 }
 
-.Spinner {
-  display: block;
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  border: 4px solid #ffffff;
-  border-top-color: rgba(255, 255, 255, 0.3);
-  border-radius: 100%;
-  left: 50%;
-  top: 0;
-  opacity: 0;
-  margin-left: -20px;
-  margin-top: -20px;
-  animation: spinner 0.6s infinite linear;
-  transition: top 0.3s 0.3s ease, opacity 0.3s 0.3s ease,
-    border-radius 0.3s ease;
-  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.2);
-}
-
-.Login:not(.loading) button:hover {
-  box-shadow: 0px 1px 3px black;
-}
-.Login:not(.loading) button:focus {
-  border-bottom-width: 4px;
+.Login h2 {
+  color: red;
+  padding-bottom: 2rem;
 }

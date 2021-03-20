@@ -9,6 +9,7 @@ import Listings from "./pages/Listings/Listings";
 import Listing from "./pages/Listing/Listing";
 import Profile from "./pages/Profile/Profile";
 import Login from "./pages/Login/Login";
+import Logout from "./pages/Logout/Logout";
 import Navigation from "./components/Navigation/Navigation";
 import { AuthContext } from "./context/AuthContext";
 
@@ -32,6 +33,7 @@ function App() {
         <Route path="/listings/:id" component={Listing} />
         <Route path="/listings" component={Listings} />
         <Route path="/profile" component={Profile} />
+        <Route path="/logout" component={Logout} />
         <Route path="/" exact component={Home} />
         <Redirect to="/" />
       </Switch>

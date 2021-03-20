@@ -1,49 +1,66 @@
-import React, { useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import api from "../../axiosInstances";
+import Spinner from "../../components/UI/Spinner/Spinner";
 
 import classes from "./Login.module.css";
 
 export default function Login() {
-  const { userData, setUserData } = useContext(AuthContext);
-  const { isLoggedIn } = userData;
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [showError, setError] = useState({ error: false, message: "" });
 
-  useEffect(() => {
-    const getData = async () => {
-      try {
-        const response = await api.get("/listings");
-        console.log(response);
-        return response;
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    console.log(isLoggedIn);
-    // getData();
-    // const guestId = localStorage.getItem("guestId");
-    // if (!guestId && !userData.isLoggedIn) {
-    //   let id = Math.random().toString(36).substring(7);
-    //   const createGuest = `Guest_${id}`;
-    //   localStorage.setItem("guestId", createGuest);
-    // }
-  }, []);
+  const { userData, setUserData, setToken } = useContext(AuthContext);
+  const { isLoggedIn } = userData;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("form submitted");
-    setUserData({ isLoggedIn: true });
+    await sendForm();
   };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const sendForm = async () => {
+    try {
+      setLoading(true);
+      const data = {
+        email,
+        password,
+      };
+      const response = await api.post("/login", data);
+      setToken(response.data["authentication_token"]);
+      setUserData({ isLoggedIn: true });
+    } catch (error) {
+      setLoading(false);
+
+      setError({ error: true, message: "Email or password not recognised" });
+    }
+  };
+
+  const errorMessage = <h2>{showError.message}</h2>;
 
   const login = isLoggedIn ? (
     <Redirect to="/" />
   ) : (
     <form className={classes.Login} onSubmit={handleSubmit}>
       <p className={classes.Title}>Log in</p>
-      <input type="text" placeholder="Username" />
+      {showError.error && errorMessage}
+      <input type="email" placeholder="Email" onChange={handleEmailChange} />
       <i className="fa fa-user"></i>
-      <input type="password" placeholder="Password" />
+      <input
+        type="password"
+        placeholder="Password"
+        onChange={handlePasswordChange}
+      />
       <i className="fa fa-key"></i>
       <button>
         <i className={classes.Spinner}></i>
@@ -52,5 +69,10 @@ export default function Login() {
     </form>
   );
 
-  return login;
+  return (
+    <>
+      {login}
+      {loading && <Spinner />}
+    </>
+  );
 }
