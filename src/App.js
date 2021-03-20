@@ -1,16 +1,11 @@
 // import logo from "./logo.svg";
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 // import PrivateRoute from "./PrivateRoute";
-import Home from "./pages/home/home";
-import Listings from "./pages/listings/listings";
-import Listing from "./pages/listing/listing";
-import Profile from "./pages/profile/profile";
+import Home from "./pages/Home/Home";
+import Listings from "./pages/Listings/Listings";
+import Listing from "./pages/Listing/Listing";
+import Profile from "./pages/Profile/Profile";
 import Navigation from "./components/Navigation/Navigation";
 
 function App() {
