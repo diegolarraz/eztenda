@@ -1,0 +1,39 @@
+.Navigation {
+  padding: 4rem var(--max-width-full);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+.NavigationImg {
+  width: 12.8rem;
+  height: 100%;
+}
+
+.NavigationLinks li {
+  display: inline-block;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.NavigationLinks li:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.NavigationLinks li::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  height: 4px;
+  background-color: var(--color-primary);
+  width: 0;
+  transition: width 0.5s;
+}
+
+.NavigationLinks li:hover:after {
+  width: 100%;
+}
