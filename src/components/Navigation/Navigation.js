@@ -24,6 +24,20 @@ export default function Navigation() {
     ? `${classes.Hamburger} ${classes.Active}`
     : classes.Hamburger;
 
+  const navigationLinks = isLoggedIn ? (
+    <>
+      <NavigationItem link="/listings">Listings</NavigationItem>
+      <NavigationItem link="/profile">Profile</NavigationItem>
+      <NavigationItem link="/logout">Logout</NavigationItem>
+    </>
+  ) : (
+    <>
+      <NavigationItem link="/listings">Listings</NavigationItem>
+      <NavigationItem link="/login">Login</NavigationItem>
+      <NavigationItem link="/signup">Sign up</NavigationItem>
+    </>
+  );
+
   return (
     <nav className={classes.Container}>
       <NavigationItem link="/">
@@ -35,17 +49,7 @@ export default function Navigation() {
         <span className={classes.Line}></span>
       </div>
 
-      <ul className={navigationLinksClasses}>
-        <NavigationItem link="/listings">Listings</NavigationItem>
-        {isLoggedIn ? (
-          <NavigationItem link="/profile">Profile</NavigationItem>
-        ) : null}
-        {isLoggedIn ? (
-          <NavigationItem link="/logout">Logout</NavigationItem>
-        ) : (
-          <NavigationItem link="/login">Login</NavigationItem>
-        )}
-      </ul>
+      <ul className={navigationLinksClasses}>{navigationLinks}</ul>
     </nav>
   );
 }
