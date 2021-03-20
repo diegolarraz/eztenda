@@ -9,6 +9,7 @@ import {
 // import PrivateRoute from "./PrivateRoute";
 import Home from "./pages/home/home";
 import Listings from "./pages/listings/listings";
+import Listing from "./pages/listing/listing";
 import Profile from "./pages/profile/profile";
 import Navigation from "./components/Navigation/Navigation";
 
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <Navigation />
       <Switch>
+        <Route path="/listings/:id" component={Listing} />
         <Route path="/listings" component={Listings} />
         <Route path="/profile" component={Profile} />
         <Route path="/" exact component={Home} />
