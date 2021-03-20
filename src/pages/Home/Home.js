@@ -1,22 +1,21 @@
 import React from "react";
 import beer from "../../assets/beer.svg";
+import HomePage from "./HomePage.css";
 
 
 
 const Home = () => {
   return (
-    <div>
-      <div>
-        <h1>
-          A great deal better
+    <div className="Hero-container m-auto">
+      <div className="flex flex-col justify-center">
+        <h1 className="text-7xl font-bold Hero-title">
+          A great deal <span className="border-bottom">better</span>
         </h1>
-        <p>
+        <p className="mt-9 font-thin Hero-insert">
         An online auction where bars can tender their listings and deals and drinks brands can bid for them.
         </p>
       </div>
-      <img src={beer}></img>
-
-      
+      <img src={beer} className="Beer-svg"></img>
     </div>
   );
 };
