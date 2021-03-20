@@ -1,1 +1,67 @@
+:root {
+  --spacing-xs: 0.8rem;
+  --spacing-s: 1.6rem;
+  --spacing-m: 3.2rem;
+  --spacing-l: clamp(3.2rem, 4vw, 6.4rem);
+  --spacing-xl: clamp(6.4rem, 9vw, 12.8rem);
+  --spacing-xxl: clamp(6.4rem, 11vw, 19.2rem);
 
+  --max-width-size: 127.6rem;
+
+  --max-width-full: calc(
+    (100vw - min(var(--max-width-size), (100vw - (var(--spacing-s) * 2)))) / 2
+  );
+
+  --max-width-half: calc(
+    (100vw - min((var(--max-width-size) / 2), (100vw - (var(--spacing-s) * 2)))) /
+      2
+  );
+
+  --color-primary: #e75040;
+  --color-secondary: #ccc;
+  --color-title: #151515;
+  --color-body: #111;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Epilogue", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-title);
+}
+
+a,
+p,
+li {
+  color: var(--color-body);
+  font-size: 1.8rem;
+}
+
+li {
+  list-style: none;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
