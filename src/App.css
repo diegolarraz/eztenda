@@ -52,7 +52,8 @@ h6 {
 
 a,
 p,
-li {
+li,
+span {
   color: var(--color-body);
   font-size: 1.8rem;
 }
