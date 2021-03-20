@@ -1,0 +1,13 @@
+.Brand-button {
+  padding: 16px 48px;
+  background-color: #E75040;
+  align-self: end;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 10px;
+  transition: .2s;
+}
+
+.Brand-button:hover {
+  background-color: rgba(231, 80, 64, 0.5);
+}
