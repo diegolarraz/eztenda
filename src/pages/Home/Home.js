@@ -20,7 +20,7 @@ const Home = () => {
           </p>  
           <Button />
         </div>
-        <img src={beer} className="Beer-svg"></img>
+        <img src={beer} className="Beer-svg" alt="beer svg"></img>
       </div>
       <div>
         <div className="Heading-Background h-96 w-3/4 flex justify-center m-auto items-end text-center rounded-3xl relative">
