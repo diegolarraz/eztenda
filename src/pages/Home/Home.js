@@ -1,5 +1,13 @@
 import React from "react";
+import ListingCard from "../../components/listingCard/listingCard";
 
-const Home = () => <h1>This is the home page</h1>;
+const Home = () => {
+
+    return (
+        <>
+            <ListingCard />
+        </>
+    );
+};
 
 export default Home;
