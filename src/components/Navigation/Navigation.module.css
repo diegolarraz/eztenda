@@ -1,29 +1,39 @@
-.Navigation {
+.Container {
   padding: 4rem var(--max-width-full);
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
+  z-index: 1;
   top: 0;
   background-color: white;
 }
 
-.NavigationImg {
+.Img {
   width: 12.8rem;
   height: 100%;
 }
 
-.NavigationLinks li {
+.Links {
+  position: initial;
+  transform: initial;
+  height: auto;
+  width: auto;
+  padding: 0;
+}
+
+.Links li {
   display: inline-block;
   position: relative;
   padding: 0 1rem;
+  margin-bottom: 0;
 }
 
-.NavigationLinks li:not(:last-child) {
+.Links li:not(:last-child) {
   margin-right: 2rem;
 }
 
-.NavigationLinks li::after {
+.Links li::after {
   content: "";
   position: absolute;
   bottom: -1rem;
@@ -34,6 +44,85 @@
   transition: width 0.5s;
 }
 
-.NavigationLinks li:hover:after {
+.Links li:hover:after {
   width: 100%;
+}
+
+@media (max-width: 500px) {
+  .Links {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(-100vh);
+    transition: 0.5s all;
+    background-color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Links li {
+    font-size: 2.4rem;
+  }
+
+  .Links li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .LinksActive {
+    transform: translateY(0);
+    z-index: 2;
+  }
+
+  .Links li {
+    display: block;
+    margin-bottom: 1rem;
+  }
+}
+
+/* HAMBURGER STYLING */
+
+.Hamburger {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .Hamburger {
+    display: block;
+    z-index: 3;
+    cursor: pointer;
+  }
+
+  .Hamburger .Line {
+    width: 4rem;
+    height: 5px;
+    background-color: var(--color-body);
+    display: block;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .Hamburger.Active .Line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .Hamburger.Active .Line:nth-child(1) {
+    -webkit-transform: translateY(13px) rotate(45deg);
+    -ms-transform: translateY(13px) rotate(45deg);
+    -o-transform: translateY(13px) rotate(45deg);
+    transform: translateY(13px) rotate(45deg);
+  }
+
+  .Hamburger.Active .Line:nth-child(3) {
+    -webkit-transform: translateY(-13px) rotate(-45deg);
+    -ms-transform: translateY(-13px) rotate(-45deg);
+    -o-transform: translateY(-13px) rotate(-45deg);
+    transform: translateY(-13px) rotate(-45deg);
+  }
 }

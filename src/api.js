@@ -1,4 +1,4 @@
-const url = "/backend/api/v1";
+const url = "https://boozebay.herokuapp.com";
 
 
 export const endpoints = {

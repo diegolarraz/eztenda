@@ -2,6 +2,7 @@ import React from "react";
 import beer from "../../assets/beer.svg";
 import "./HomePage.css";
 import Button from "../../components/Button/BrandButton.js"
+import ListingCard from "../../components/listingCard/listingCard";
 
 
 
@@ -18,6 +19,7 @@ const Home = () => {
         <Button />
       </div>
       <img src={beer} className="Beer-svg"></img>
+      <ListingCard />
     </div>
   );
 };
