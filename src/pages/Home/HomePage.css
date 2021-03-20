@@ -7,7 +7,7 @@
 }
 
 @media (min-width: 768px ) {
-  .Section-Container {
+  .Hero-Container {
     display: flex;
     justify-content: space-between;
   }
@@ -25,6 +25,26 @@
   .Hero-insert {
     max-width: 435px;
     font-size: 24px;
+    margin-top: 64px;
+    margin-bottom: 64px;
   }
 
+  .Card-Section {
+    margin-top: 128px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .Heading-Background {
+    margin-top: 128px;
+  }
+  
+
 }
+
+.Heading-Background {
+  background-color: #DBE8FC;
+  margin-top: 64px;
+  margin-bottom: 64px;;
+}
+
