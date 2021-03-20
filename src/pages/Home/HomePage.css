@@ -1,4 +1,4 @@
-.Hero-container {
+.Section-Container {
   padding: 4rem var(--max-width-full);
 }
 
@@ -7,7 +7,7 @@
 }
 
 @media (min-width: 768px ) {
-  .Hero-container {
+  .Section-Container {
     display: flex;
     justify-content: space-between;
   }
