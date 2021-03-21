@@ -43,7 +43,10 @@ export default function Home() {
       <div className="Hero-Container">
         <div className="flex flex-col justify-center">
           <h1 className="text-7xl font-bold Hero-title">
-            A great deal <span className="border-bottom">better</span>
+            A great deal{" "}
+            <span className="border-bottom Hero-title text-7xl font-bold ">
+              better
+            </span>
           </h1>
           <p className="mt-14 mb-14 font-thin Hero-insert">
             An online auction where bars can tender their listings and deals and
@@ -53,14 +56,8 @@ export default function Home() {
         </div>
         <img src={beer} className="Beer-svg" alt="beer svg"></img>
       </div>
-      <div>
-        <div className="Heading-Background h-96 w-3/4 flex justify-center m-auto items-end text-center rounded-3xl relative">
-          <blockquote className="text-7xl font-bold w-3/6 absolute -bottom-8">
-            Latest Deals
-          </blockquote>
-        </div>
-        <section className="grid">{listingsArr}</section>
-      </div>
+      <h2 className="deals">Latest Deals</h2>
+      <section className="grid">{listingsArr}</section>
     </div>
   );
 }

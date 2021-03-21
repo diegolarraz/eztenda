@@ -3,10 +3,10 @@
 }
 
 .border-bottom {
-  border-bottom: solid 8px #E75040;
+  border-bottom: solid 8px #e75040;
 }
 
-@media (min-width: 768px ) {
+@media (min-width: 768px) {
   .Hero-Container {
     display: flex;
     justify-content: space-between;
@@ -38,13 +38,16 @@
   .Heading-Background {
     margin-top: 128px;
   }
-  
-
 }
 
 .Heading-Background {
-  background-color: #DBE8FC;
+  background-color: #dbe8fc;
   margin-top: 64px;
-  margin-bottom: 64px;;
+  margin-bottom: 64px;
 }
 
+.deals {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 4rem 0;
+}
