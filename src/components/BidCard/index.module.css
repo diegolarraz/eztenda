@@ -1,0 +1,68 @@
+.BidCard {
+    width: 100%;
+    height: 130px;
+    background-color: #DBE8FC;
+    border-radius: 0px 50px 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 20px;
+}
+
+.accept {
+    padding: 4px 12px;
+    background-color: #E75040;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.accepted {
+    padding: 4px 12px;
+    background-color: green;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.compPic {
+    height: 60px;
+    width: 60px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.bidRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.bidRight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bidRight p {
+    max-width: 90px;
+    text-align: center;
+}
+
+.prize {
+    font-size: 22px;
+    font-weight: 700px;
+}
+
+.bidRight div {
+    margin-bottom: 4px;
+}
+
+.compPic img {
+    border-radius: 50px;
+}

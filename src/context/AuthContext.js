@@ -5,7 +5,7 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [userData, setUserData] = useState({
     isLoggedIn: false,
-    // user: null,
+    user: null,
     token: null,
   });
 
@@ -14,14 +14,14 @@ const AuthProvider = ({ children }) => {
     if (token) {
       setUserData({
         isLoggedIn: true,
-        // user: data.user,
+        user: "",
         token: token,
       });
     }
   }, []);
 
   const setToken = (token) => localStorage.setItem("authToken", token);
-
+  const setUser = (user) => localStorage.setItem("user", user);
   const logout = () => {
     setUserData({ isLoggedIn: false, user: null, token: null });
     localStorage.removeItem("authToken");
@@ -34,6 +34,7 @@ const AuthProvider = ({ children }) => {
         setUserData,
         logout,
         setToken,
+        setUser
       }}
     >
       {children}
