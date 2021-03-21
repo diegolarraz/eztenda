@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import beer from "../../assets/beer.svg";
 import "./HomePage.css";
@@ -27,14 +27,14 @@ export default function Home() {
 
   const listingsArr = listings.map((listing) => {
     return (
-      <NavLink to={`listings/${listing.id}`} key={listing.id}>
+      <Link to={`listings/${listing.id}`} key={listing.id}>
         <ListingCard
           unitType={listing.unit_type}
           description={listing.description}
           category={listing.category}
           minBid={listing.min_bid}
         />
-      </NavLink>
+      </Link>
     );
   });
 
@@ -52,7 +52,9 @@ export default function Home() {
             An online auction where bars can tender their listings and deals and
             drinks brands can bid for them.
           </p>
-          <Button />
+          <Link to="/listings">
+            <Button />
+          </Link>
         </div>
         <img src={beer} className="Beer-svg" alt="beer svg"></img>
       </div>

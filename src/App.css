@@ -8,14 +8,7 @@
 
   --max-width-size: 127.6rem;
 
-  --max-width-full: calc(
-    (100vw - min(var(--max-width-size), (100vw - (var(--spacing-s) * 2)))) / 2
-  );
-
-  --max-width-half: calc(
-    (100vw - min((var(--max-width-size) / 2), (100vw - (var(--spacing-s) * 2)))) /
-      2
-  );
+  --max-width-full: calc((100vw - min(127.6rem, (100vw - 1.6rem * 2))) / 2);
 
   --color-primary: #e75040;
   --color-secondary: #ccc;
@@ -74,7 +67,7 @@ img {
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 3rem;
+  grid-gap: 4rem 6rem;
 }
 
 .padding--full {
@@ -90,6 +83,7 @@ img {
 @media (max-width: 700px) {
   .grid {
     grid-template-columns: 1fr;
+    grid-gap: 4rem;
   }
 }
 

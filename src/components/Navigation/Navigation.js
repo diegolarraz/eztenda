@@ -1,4 +1,6 @@
 import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
+
 import NavigationItem from "./NavigationItem/NavigationItem";
 import { AuthContext } from "../../context/AuthContext";
 
@@ -52,9 +54,9 @@ export default function Navigation() {
 
   return (
     <nav className={classes.Container}>
-      <NavigationItem link="/">
+      <Link to="/">
         <img src={eztendaLogo} alt="eztenda logo" className={classes.Img} />
-      </NavigationItem>
+      </Link>
       <div className={hamburgerClasses} onClick={handleClick}>
         <span className={classes.Line}></span>
         <span className={classes.Line}></span>
