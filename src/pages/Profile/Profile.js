@@ -1,11 +1,33 @@
 import classes from "./index.module.css";
-import React, {useState} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import BgDesktop from '../../assets/circlesDesktop.svg'
 import BgMobile from '../../assets/circlesMobile.svg'
 import Arrow from '../../assets/down-arrow.svg'
 import ListingCard from "../../components/listingCard/listingCard";
+import api from "../../axiosInstances";
+import {AuthContext} from '../../context/AuthContext';
+
 const Profile = () => {
     const [dropDown, setDropDown] = useState(0);
+    const [user, setUser] = useState({})
+    const {userData} = useContext(AuthContext);
+    console.log(userData)
+    useEffect(() => {
+        const getListings = async () => {
+          try {
+            const response = await api.get(`/pages/profile`, {
+                headers: {
+                    "email": userData.user
+                }
+            });
+            setUser(response)
+            console.log(response)
+          } catch (error) {
+            console.log(error);
+          }
+        };
+        getListings();
+    }, []);
 
     const handleDropdown = (index) => {
         console.log(index);
@@ -30,16 +52,16 @@ const Profile = () => {
                     <h1>Account</h1>
                     <br/><br/>
                     <h2>name</h2>
-                    <p className={classes.compName}>GAUCHO</p>
+                    <p className={classes.compName}>Ping Pong</p>
                     <br/><br/>
                     <h2>email</h2>
-                    <p className={classes.compName}>boozygang@booze.com</p>
+                    <p className={classes.compName}>drinks@pingpong.com</p>
                     <br/><br/>
                     <h2>address</h2>
                     <p className={classes.compName}>138 Baker St</p>
                     <br/><br/>
                     <h2>description</h2>
-                    <p className={classes.compName}>jbfhabdsfhbdshfjd</p>
+                    <p className={classes.compName}>Ping Pong entertainemnt whilst getting waved</p>
                 </div>
                 <br/><br/>
                 <div className={classes.Dropdown}>
@@ -47,9 +69,10 @@ const Profile = () => {
                         <h1>Active listings</h1>
                         <img src={Arrow} alt=""/>
                     </div>
-                    <div className={classes.activeContent}>
-                        {dropDown === 1 ? <ListingCard /> : ""}
-                    </div>
+                    {dropDown === 1 ? <div className={classes.activeContent}>
+                    <br/>
+                        <ListingCard /> 
+                    </div>: ""}
                 </div>
                 <br/><br/>
                 <div className={classes.Dropdown}>
@@ -57,9 +80,10 @@ const Profile = () => {
                         <h1>Past listings</h1>
                         <img src={Arrow} alt=""/>
                     </div>
-                    <div className={classes.activeContent}>
-                        {dropDown === 2 ? <ListingCard /> : ""}
-                    </div>
+                    {dropDown === 2 ? <div className={classes.activeContent}>
+                    <br />
+                         <ListingCard />
+                    </div> : ""}
                 </div>
             </div>
         </>

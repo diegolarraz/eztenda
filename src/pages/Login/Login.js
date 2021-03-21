@@ -13,7 +13,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [showError, setError] = useState({ error: false, message: "" });
 
-  const { userData, setUserData, setToken } = useContext(AuthContext);
+  const { userData, setUserData, setToken, setUser } = useContext(AuthContext);
   const { isLoggedIn } = userData;
 
   const handleSubmit = async (event) => {
@@ -37,8 +37,9 @@ export default function Login() {
         password,
       };
       const response = await api.post("/login", data);
+      setUser(response.data.email)
       setToken(response.data["authentication_token"]);
-      setUserData({ isLoggedIn: true });
+      setUserData({ isLoggedIn: true, user: response.data.email });
     } catch (error) {
       setLoading(false);
 

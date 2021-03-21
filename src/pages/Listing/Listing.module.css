@@ -1,0 +1,54 @@
+.SectionTop {
+  background-color: #EBF1FB;
+  max-width: 80vw;
+  border-radius: 0px 50px 50px 0px ;
+  height: 100px;
+}
+
+.TextContainer {
+  padding: 4rem var(--max-width-full);
+}
+
+.TextLight {
+  font-weight: 200;
+}
+
+.ListingInfo{
+  max-width: 70vw;
+  margin-bottom: 16px;;
+}
+
+.SubTitle {
+  font-size: 45px;
+  border-bottom: solid 8px #E75040;
+  display: inline-block;
+  margin-bottom: 32px;
+}
+
+/* .Price:first-child {
+  margin-bottom: 16px;
+} */
+
+.Form input {
+  border-bottom: 1px solid #E75040;
+  font-size: 18px;
+  display: block;
+}
+
+.Form input:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
+.Label {
+  font-size: 18px;
+}
+
+.Submit {
+  display: block;
+  font-size: 18px;;
+  padding: 8px 24px;
+  color: #fff;
+  background-color: #E75040;
+  border-radius: 10px;
+  display: flex;
+}
