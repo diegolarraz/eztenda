@@ -45,6 +45,7 @@
   transition: width 0.5s;
 }
 
+.Links a:focus:after,
 .Links a:hover:after {
   width: 100%;
 }
