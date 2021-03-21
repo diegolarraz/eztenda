@@ -4,7 +4,7 @@ import api from "../../axiosInstances";
 
 import ListingCard from "../../components/listingCard/listingCard";
 
-export default function Listings() {
+function Listings() {
   const [listings, setListings] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function Listings() {
 
   const listingsArr = listings.map((listing) => {
     return (
-      <NavLink to={`listings/${listing.id}`}>
+      <NavLink to={`listings/${listing.id}`} key={listing.id}>
         <ListingCard
           unitType={listing.unit_type}
           description={listing.description}
@@ -33,5 +33,7 @@ export default function Listings() {
     );
   });
 
-  return listingsArr;
+  return <section className="grid padding--full">{listingsArr}</section>;
 }
+
+export default Listings;

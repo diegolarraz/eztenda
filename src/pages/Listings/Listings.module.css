@@ -1,0 +1,12 @@
+.GridContainer {
+  padding: 4rem var(--max-width-full);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+}
+
+@media (max-width: 500px) {
+  .GridContainer {
+    grid-template-columns: 1fr;
+  }
+}

@@ -13,7 +13,6 @@ export default function Navigation() {
   const { isLoggedIn } = userData;
 
   const handleClick = () => {
-    console.log("clicked");
     setMenuOpen(!menuOpen);
   };
 
