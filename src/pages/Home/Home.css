@@ -29,7 +29,7 @@
 .Hero-title {
   font-size: 4rem;
   margin-bottom: 4rem;
-  line-height: 1.2;
+  line-height: 1.4;
 }
 
 .Hero-insert {
@@ -57,7 +57,7 @@
   .Hero-title {
     max-width: 560px;
     font-size: 96px;
-    line-height: 1.4;
+    line-height: 1.2;
   }
 
   .Hero-insert {
