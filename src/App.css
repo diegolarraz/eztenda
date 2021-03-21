@@ -92,3 +92,7 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+nav a.active::after {
+  width: 100%;
+}

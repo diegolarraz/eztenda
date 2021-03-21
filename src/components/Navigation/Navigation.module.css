@@ -34,7 +34,7 @@
   margin-right: 2rem;
 }
 
-.Links li::after {
+.Links a::after {
   content: "";
   position: absolute;
   bottom: -1rem;
@@ -45,7 +45,7 @@
   transition: width 0.5s;
 }
 
-.Links li:hover:after {
+.Links a:hover:after {
   width: 100%;
 }
 
@@ -92,6 +92,10 @@
 }
 
 @media (max-width: 500px) {
+  .Container {
+    padding: 2rem var(--max-width-full);
+  }
+
   .Hamburger {
     display: block;
     z-index: 3;
