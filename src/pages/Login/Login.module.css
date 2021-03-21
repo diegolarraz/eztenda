@@ -54,7 +54,6 @@
   height: 100%;
   padding: 10px 10px;
   background: var(--color-primary);
-  color: #fff;
   display: block;
   border: none;
   margin-top: 20px;
@@ -67,6 +66,10 @@
   transform: rotateZ(0deg);
   transition: all 0.1s ease-out;
   border-bottom-width: 7px;
+}
+
+.Login button span {
+  color: #fff;
 }
 
 .Login h2 {

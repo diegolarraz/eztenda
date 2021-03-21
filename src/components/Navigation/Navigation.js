@@ -13,6 +13,7 @@ export default function Navigation() {
   const { isLoggedIn } = userData;
 
   const handleClick = () => {
+    console.log("clicked");
     setMenuOpen(!menuOpen);
   };
 
@@ -26,15 +27,27 @@ export default function Navigation() {
 
   const navigationLinks = isLoggedIn ? (
     <>
-      <NavigationItem link="/listings">Listings</NavigationItem>
-      <NavigationItem link="/profile">Profile</NavigationItem>
-      <NavigationItem link="/logout">Logout</NavigationItem>
+      <NavigationItem handleClick={handleClick} link="/listings">
+        Listings
+      </NavigationItem>
+      <NavigationItem handleClick={handleClick} link="/profile">
+        Profile
+      </NavigationItem>
+      <NavigationItem handleClick={handleClick} link="/logout">
+        Logout
+      </NavigationItem>
     </>
   ) : (
     <>
-      <NavigationItem link="/listings">Listings</NavigationItem>
-      <NavigationItem link="/login">Login</NavigationItem>
-      <NavigationItem link="/signup">Sign up</NavigationItem>
+      <NavigationItem handleClick={handleClick} link="/listings">
+        Listings
+      </NavigationItem>
+      <NavigationItem handleClick={handleClick} link="/login">
+        Login
+      </NavigationItem>
+      <NavigationItem handleClick={handleClick} link="/signup">
+        Sign up
+      </NavigationItem>
     </>
   );
 
