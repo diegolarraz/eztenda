@@ -68,3 +68,10 @@ a:focus .Card,
 
   width: 68%;
 }
+
+@media (max-width: 500px) {
+  a:focus .Card,
+  .Card:hover {
+    transform: none;
+  }
+}
