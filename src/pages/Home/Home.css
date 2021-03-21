@@ -1,0 +1,90 @@
+.Container {
+  padding: 6rem var(--max-width-full);
+}
+
+@keyframes animate-border {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
+.border-bottom {
+  position: relative;
+}
+
+.border-bottom::after {
+  content: "";
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  height: 8px;
+  background-color: var(--color-primary);
+  animation: animate-border 1s 0.5s ease-in-out forwards;
+}
+
+.Hero-title {
+  font-size: 4rem;
+  margin-bottom: 4rem;
+  line-height: 1.2;
+}
+
+.Hero-insert {
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 1.6;
+  margin-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+  .border-bottom::after {
+    bottom: 0;
+  }
+
+  .Hero {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .Beer-svg {
+    width: 50%;
+    height: 50%;
+  }
+
+  .Hero-title {
+    max-width: 560px;
+    font-size: 96px;
+    line-height: 1.4;
+  }
+
+  .Hero-insert {
+    max-width: 435px;
+    margin-top: 6.4rem;
+    margin-bottom: 6.4rem;
+  }
+
+  .Card-Section {
+    margin-top: 128px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .Heading-Background {
+    margin-top: 128px;
+  }
+}
+
+.Heading-Background {
+  background-color: #dbe8fc;
+  margin-top: 64px;
+  margin-bottom: 64px;
+}
+
+.deals {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 4rem 0;
+}

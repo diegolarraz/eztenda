@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import beer from "../../assets/beer.svg";
-import "./HomePage.css";
+import "./Home.css";
 import Button from "../../components/Button/BrandButton.js";
 import ListingCard from "../../components/listingCard/listingCard";
 
@@ -39,16 +39,14 @@ export default function Home() {
   });
 
   return (
-    <div className="Section-Container m-auto">
-      <div className="Hero-Container">
-        <div className="flex flex-col justify-center">
-          <h1 className="text-7xl font-bold Hero-title">
+    <main className="Container">
+      <header className="Hero">
+        <div>
+          <h1 className="Hero-title">
             A great deal{" "}
-            <span className="border-bottom Hero-title text-7xl font-bold ">
-              better
-            </span>
+            <span className="border-bottom Hero-title">better</span>
           </h1>
-          <p className="mt-14 mb-14 font-thin Hero-insert">
+          <p className="Hero-insert">
             An online auction where bars can tender their listings and deals and
             drinks brands can bid for them.
           </p>
@@ -57,9 +55,9 @@ export default function Home() {
           </Link>
         </div>
         <img src={beer} className="Beer-svg" alt="beer svg"></img>
-      </div>
+      </header>
       <h2 className="deals">Latest Deals</h2>
       <section className="grid">{listingsArr}</section>
-    </div>
+    </main>
   );
 }
