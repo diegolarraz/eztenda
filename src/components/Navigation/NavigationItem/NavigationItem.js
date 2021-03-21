@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const navigationItem = (props) => (
   <li>
-    <NavLink exact to={props.link}>
+    <NavLink exact to={props.link} onClick={props.handleClick}>
       {props.children}
     </NavLink>
   </li>

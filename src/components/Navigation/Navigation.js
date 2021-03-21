@@ -13,6 +13,7 @@ export default function Navigation() {
   const { isLoggedIn } = userData;
 
   const handleClick = () => {
+    console.log("clicked");
     setMenuOpen(!menuOpen);
   };
 
@@ -23,6 +24,32 @@ export default function Navigation() {
   const hamburgerClasses = menuOpen
     ? `${classes.Hamburger} ${classes.Active}`
     : classes.Hamburger;
+
+  const navigationLinks = isLoggedIn ? (
+    <>
+      <NavigationItem handleClick={handleClick} link="/listings">
+        Listings
+      </NavigationItem>
+      <NavigationItem handleClick={handleClick} link="/profile">
+        Profile
+      </NavigationItem>
+      <NavigationItem handleClick={handleClick} link="/logout">
+        Logout
+      </NavigationItem>
+    </>
+  ) : (
+    <>
+      <NavigationItem handleClick={handleClick} link="/listings">
+        Listings
+      </NavigationItem>
+      <NavigationItem handleClick={handleClick} link="/login">
+        Login
+      </NavigationItem>
+      <NavigationItem handleClick={handleClick} link="/signup">
+        Sign up
+      </NavigationItem>
+    </>
+  );
 
   return (
     <nav className={classes.Container}>
@@ -35,17 +62,7 @@ export default function Navigation() {
         <span className={classes.Line}></span>
       </div>
 
-      <ul className={navigationLinksClasses}>
-        <NavigationItem link="/listings">Listings</NavigationItem>
-        {isLoggedIn ? (
-          <NavigationItem link="/profile">Profile</NavigationItem>
-        ) : null}
-        {isLoggedIn ? (
-          <NavigationItem link="/logout">Logout</NavigationItem>
-        ) : (
-          <NavigationItem link="/login">Login</NavigationItem>
-        )}
-      </ul>
+      <ul className={navigationLinksClasses}>{navigationLinks}</ul>
     </nav>
   );
 }
